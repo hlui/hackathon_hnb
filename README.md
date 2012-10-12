@@ -11,11 +11,14 @@ jQuery Mobile (jqm) is the easiest way to build sites and apps that are accessib
 jQuery Mobile is all about the ajax. By default jqm hijacks all anchor tags and loads that anchor's href with ajax. Essentially, you could load the home page of an e-commerce site and go through the whole browse flow without leaving the home page. jQuery Mobile will ajax the content in for the new page and display:none the old page content. This is what is done for this Holland & Barrett demo.
 
 Also, jQuery Mobile has a standard for setting up their pages-
+```html
 <div data-role=page>
   <div data-role=header></div>
   <div data-role=content></div>
   <div data-role=footer></div>
 </div>
+```
+
 There is a new <div data-role=page> for every page that is ajaxed in. When ajaxing content in, it will insert this div into the DOM, and display:none the previous content by hiding all the other <div data-role=page>'s.
 
 The main things focused on during this project for jQuery Mobile were:
