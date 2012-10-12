@@ -172,6 +172,8 @@ and inserted below the carousel
 -Uses hjax since the PDP is requested using AJAX and then the full HTML document is
 converted to an HTML fragment at the proxy before the content is inserted into the DOM
 
+-Be sure to SCROLL the carousel at the top and click on your favorite women's shirt!
+
 http://blitz.macys.com.moovapp.com/
 
 
