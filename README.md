@@ -49,11 +49,13 @@ while showing the current page AND the new page (hjax)
 
 `jqm_insert(Text %tag_name, Text %role)`
 
-`jqm_insert_footer(Text %tag_name, Text %role)`
+`jqm_insert_page()`
 
-`jqm_insert_content(Text %tag_name, Text %role)`
+`jqm_insert_header()`
 
-`jqm_insert_header(Text %tag_name, Text %role)`
+`jqm_insert_content()`
+
+`jqm_insert_footer()`
 
 -These insert functions help set up the HTML structure according to jQuery Mobile's standards. All of these also have the variants of insert that already exist for Tritium's insert, i.e. you can call jqm_insert_at("top", "div", "My Content", "roleValue", class: "mw_rocks")
 
@@ -69,6 +71,40 @@ while showing the current page AND the new page (hjax)
 -opens an html() scope for parsing, BUT it first converts a FULL HTML document into
 -an HTML fragment, meaning it strips the doctype, html, head, and body tags
 
+## Integration
+
+1. Initialize
+- In html.ts, to bring in the jQuery Mobile library, call jqm_initialize("false")
+
+2. Wrap your header, main content, footer sections. This will apply default transitions and loading icons when clicking on links.
+
+    $("/html/body") {
+      jqm_insert_page(class: fetch("/html/body/@class")) {
+        jqm_insert_header() {
+          move_here("/html/body//*[contains(@class, 'mw-header')]")
+        }
+        jqm_insert_content() {
+          move_here("/html/body//div[@id='main-content']")
+        }
+        jqm_insert_footer() {
+          move_here("/html/body//*[contains(@class, 'mw-footer')]")
+        }
+      }
+    }
+
+3. Customize Transitions (fade transition used by default)
+    $(".//a[@class='superlink']") {
+      jqm_transition("slideup")
+    }
+    
+4. Customize loading icon/text
+    jqm_override("jqm_override.js")
+
+    Add below to /assets/javascript/jqm_override.js
+    $(document).bind('mobileinit', function() {
+      $.mobile.loader.prototype.options.text = "Loading...";
+      $.mobile.loader.prototype.options.textVisible = true;
+    }
 
 ## Example Links
 
