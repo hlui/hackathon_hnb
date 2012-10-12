@@ -105,9 +105,7 @@ $("/html") {
         move_here("/html/body//*[contains(@class, 'mw-header')]")
       }
       jqm_insert_content() {
-        move_here("/html/body//div[@id='main']") {
-
-        }
+        move_here("/html/body//div[@id='main']")
       }
       jqm_insert_footer() {
         move_here("/html/body//*[contains(@class, 'mw-footer')]")
