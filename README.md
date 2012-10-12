@@ -73,31 +73,31 @@ while showing the current page AND the new page (hjax)
 
 ## Integration
 
-1. Initialize
+1 Initialize
 - In html.ts, to bring in the jQuery Mobile library, call jqm_initialize("false")
 
-2. Wrap your header, main content, footer sections. This will apply default transitions and loading icons when clicking on links.
+2 Wrap your header, main content, footer sections. This will apply default transitions and loading icons when clicking on links.
+  
+    ``$("/html/body") {
+        jqm_insert_page(class: fetch("/html/body/@class")) {
+          jqm_insert_header() {
+            move_here("/html/body//*[contains(@class, 'mw-header')]")
+          }
+          jqm_insert_content() {
+            move_here("/html/body//div[@id='main-content']")
+          }
+          jqm_insert_footer() {
+            move_here("/html/body//*[contains(@class, 'mw-footer')]")
+          }
+        }
+      }``
 
-    $("/html/body") {
-      jqm_insert_page(class: fetch("/html/body/@class")) {
-        jqm_insert_header() {
-          move_here("/html/body//*[contains(@class, 'mw-header')]")
-        }
-        jqm_insert_content() {
-          move_here("/html/body//div[@id='main-content']")
-        }
-        jqm_insert_footer() {
-          move_here("/html/body//*[contains(@class, 'mw-footer')]")
-        }
-      }
-    }
-
-3. Customize Transitions (fade transition used by default)
+3 Customize Transitions (fade transition used by default)
     $(".//a[@class='superlink']") {
       jqm_transition("slideup")
     }
     
-4. Customize loading icon/text
+4 Customize loading icon/text
     jqm_override("jqm_override.js")
 
     Add below to /assets/javascript/jqm_override.js
