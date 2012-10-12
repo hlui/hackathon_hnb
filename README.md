@@ -23,9 +23,13 @@ There is a new `<div data-role=page>` for every page that is ajaxed in. When aja
 
 The main things focused on during this project for jQuery Mobile were:
 1) Importing the libraries (js and css)
+
 2) Setting up the HTML structure according to jQuery Mobile's standards
+
 3) Transitions while loading ajax content
+
 4) Loading Icon while loading ajax content
+
 5) Manually ajaxing the next page into a container on the current page 
 while showing the current page AND the new page (hjax)
 
