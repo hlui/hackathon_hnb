@@ -99,12 +99,15 @@ while showing the current page AND the new page (hjax)
       }
     
 4 Customize loading icon/text
-    jqm_override("jqm_override.js")
+
+    After the jqm_initialize() call, then call jqm_override("jqm_override.js")
 
     Add below to /assets/javascript/jqm_override.js
     $(document).bind('mobileinit', function() {
       $.mobile.loader.prototype.options.text = "Loading...";
       $.mobile.loader.prototype.options.textVisible = true;
+      $.mobile.loader.prototype.options.theme = "a";
+      $.mobile.loader.prototype.options.html = "";
     }
     
 5 Using hjax -ajaxes in a full HTML page. Use hjax_html(%encoding) to parse it, which will convert the full HTML document into an HTML fragment, preparing it to be inserted into the DOM
