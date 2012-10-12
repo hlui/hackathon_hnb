@@ -93,9 +93,10 @@ while showing the current page AND the new page (hjax)
     }
 
 3 Customize Transitions (fade transition used by default)
-      ``$(".//a[@class='superlink']") {
+
+      $(".//a[@class='superlink']") {
         jqm_transition("slideup")
-      }``
+      }
     
 4 Customize loading icon/text
     jqm_override("jqm_override.js")
