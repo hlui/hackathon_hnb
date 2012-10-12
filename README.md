@@ -22,6 +22,7 @@ Also, jQuery Mobile has a standard for setting up their pages-
 There is a new `<div data-role=page>` for every page that is ajaxed in. When ajaxing content in, it will insert this div into the DOM, and display:none the previous content by hiding all the other `<div data-role=page>`'s.
 
 The main things focused on during this project for jQuery Mobile were:
+
 1) Importing the libraries (js and css)
 
 2) Setting up the HTML structure according to jQuery Mobile's standards
