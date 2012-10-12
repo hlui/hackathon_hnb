@@ -185,6 +185,10 @@ http://blitz.macys.com.moovapp.com/
 
 3) Look into making this work with more complicated flows (i.e., ajaxing pages that are ajaxed, i.e. MCOM)
 
+4) Fine tune the integration of hjax (honius javascript & xml)
+
+5) Integrate more features of jqm (prefetching pages via ajax, popups, lists, form elements)
+
 ## End of Hackathon Readme - jQuery Mobile (jqm)
 
 ## Domains
