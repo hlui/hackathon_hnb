@@ -19,7 +19,7 @@ Also, jQuery Mobile has a standard for setting up their pages-
 </div>
 ```
 
-There is a new <div data-role=page> for every page that is ajaxed in. When ajaxing content in, it will insert this div into the DOM, and display:none the previous content by hiding all the other <div data-role=page>'s.
+There is a new `<div data-role=page>` for every page that is ajaxed in. When ajaxing content in, it will insert this div into the DOM, and display:none the previous content by hiding all the other `<div data-role=page>`'s.
 
 The main things focused on during this project for jQuery Mobile were:
 1) Importing the libraries (js and css)
@@ -30,32 +30,32 @@ The main things focused on during this project for jQuery Mobile were:
 
 ## Documentation
 
-jqm_initialize(booleanString %use_theme)
+`jqm_initialize(booleanString %use_theme)`
 -import the jQuery, jQuery Mobile, and jQuery Mobile CSS files (compressed/minified)
 -If %use_theme is true, will import the "themed" css file, otherwise imports basic css file
 
-jqm_initialize_debug(booleanString %use_theme)
+`jqm_initialize_debug(booleanString %use_theme)`
 -same as jqm_initialize except it imports the uncompressed versions
 
-jqm_override(string %js_filename)
+`jqm_override(string %js_filename)`
 -Path to js file inside /assets/javascript folder
 -Used to override the global defaults set up for jQuery Mobile (i.e. changing the loading icon/text)
 
-jqm_insert(Text %tag_name, Text %role)
-jqm_insert_footer(Text %tag_name, Text %role)
-jqm_insert_content(Text %tag_name, Text %role)
-jqm_insert_header(Text %tag_name, Text %role)
+`jqm_insert(Text %tag_name, Text %role)`
+`jqm_insert_footer(Text %tag_name, Text %role)`
+`jqm_insert_content(Text %tag_name, Text %role)`
+`jqm_insert_header(Text %tag_name, Text %role)`
 -These insert functions help set up the HTML structure according to jQuery Mobile's standards. All of these also have the variants of insert that already exist for Tritium's insert, i.e. you can call jqm_insert_at("top", "div", "My Content", "roleValue", class: "mw_rocks")
 
-jqm_wrap(Text %tag_name, Text %role) 
+`jqm_wrap(Text %tag_name, Text %role)`
 -Wrap in tag_name and set's the role of the container. Also used in conjunction with jqm_insert functions to set up the HTML structure
 
-jqm_transition(Text %transition)
+`jqm_transition(Text %transition)`
 -Transitions: fade, pop, flip, turn, flow, slidefade, slide, slideup, slidedown, none
 -call on an ajax-ified anchor tag so that it uses this transition while loading the
 -content via ajax
 
-hjax_html(Text %encoding)
+`hjax_html(Text %encoding)`
 -opens an html() scope for parsing, BUT it first converts a FULL HTML document into
 -an HTML fragment, meaning it strips the doctype, html, head, and body tags
 
@@ -88,7 +88,9 @@ http://blitz.macys.com.moovapp.com/
 ## Future
 
 1) Set up loading icon for pages that are NOT ajaxed
+
 2) Easier way to configure loading icon in Tritium (current way is to modify a js file using jqm_override())
+
 3) Look into making this work with more complicated flows (i.e., ajaxing pages that are ajaxed, i.e. MCOM)
 
 ## End of Hackathon Readme - jQuery Mobile (jqm)
