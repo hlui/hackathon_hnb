@@ -54,6 +54,7 @@ while showing the current page AND the new page (hjax)
 `jqm_insert_content(Text %tag_name, Text %role)`
 
 `jqm_insert_header(Text %tag_name, Text %role)`
+
 -These insert functions help set up the HTML structure according to jQuery Mobile's standards. All of these also have the variants of insert that already exist for Tritium's insert, i.e. you can call jqm_insert_at("top", "div", "My Content", "roleValue", class: "mw_rocks")
 
 `jqm_wrap(Text %tag_name, Text %role)`
