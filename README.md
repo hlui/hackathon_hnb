@@ -106,6 +106,37 @@ while showing the current page AND the new page (hjax)
       $.mobile.loader.prototype.options.text = "Loading...";
       $.mobile.loader.prototype.options.textVisible = true;
     }
+    
+5 Using hjax -ajaxes in a full HTML page. Use hjax_html(%encoding) to parse it, which will convert the full HTML document into an HTML fragment, preparing it to be inserted into the DOM
+    
+    JS
+
+    $.ajax({
+      type: "GET",
+      url: url,
+      cache: false,
+      dataType: "html",
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('X-Hjax', 'true');
+      },
+      success: onSuccess
+    });
+
+    Tritium
+      match($x_hjax, /.+/) {
+        $hjax = "true"    
+        hjax_html("UTF-8") {
+          $content_type = "hjax"
+          match($path) {
+            with(/\/shop\/product/) {
+              log("--> Importing pages/product.ts in main.ts")
+              @import pages/product.ts
+            }
+          }
+        }
+      }
+
+ 
 
 ## Example Links
 
