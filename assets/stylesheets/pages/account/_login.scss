@@ -1,0 +1,22 @@
+.mw-login {
+  .mw_box1 {
+    padding: 0 10px;
+    @include padding-leader(1);
+    @include trailer(1);
+  } 
+  
+  .loginButtonContainer {
+    margin: 15px 0 25px;
+  }
+
+  h1.mw_box1_head {
+    color: #FFF;
+    @include adjust-font-size-to($h2_size);
+    padding-left: 10px;
+    line-height: 1.5em;
+    @include leader(1);
+  }
+  input[name='action'] {
+    margin-left: 0;
+  }
+}

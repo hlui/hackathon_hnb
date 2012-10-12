@@ -1,0 +1,68 @@
+body.mw-rfl {
+
+  #content {
+    @include padding-leader(1);
+
+    #MyPointsBalance {
+      .header {
+        @extend .mw_h2;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      #btnCheckMyPoints {
+        @extend .mw_btn2;
+        padding: 5px 10px;
+      }
+    }
+
+    .mw-cart_landing, .mw-mouse_landing {
+      @include leader(1);
+
+      img {
+        float:left;
+        display: block;
+        padding-right: 10px;
+        padding-bottom: 30px;
+      } 
+      b > br {
+        display: none;
+      }
+    }
+
+    .mw-loyaltyLandingItem {
+      margin: 0 -10px;
+      @include bar_chevron;
+
+      > div.mw-chevron {
+        top: -10px; 
+      }
+
+      &:nth-of-type(1) {
+        @include leader(1);
+      }
+    } 
+
+    #loyalty-landing-links { 
+      @include leader(1);
+
+      > ul > li {
+        > a {
+          @extend .mw_bar1;
+          @include bar_chevron;
+          margin: 0 -10px;
+          > div.mw-chevron {
+            top: -10px; 
+          }
+        }
+
+        > img {
+          display: none;
+        }
+      }
+
+    }
+  }
+}

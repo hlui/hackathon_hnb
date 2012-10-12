@@ -1,0 +1,44 @@
+.mw-category_text {
+
+  #breadcrumb-text {
+    @include adjust-font-size-to(12px);
+    padding: 0 5px;
+    @include padding-leader(.25);
+    @include padding-trailer(.25);
+
+    color: $gray1;
+
+    font-weight: bold;
+
+    border-bottom: 1px solid $gray1;
+    > a {
+      color: $gray1;
+      font-weight: normal;
+    }
+  }
+
+  #page-content > h1 {
+    padding-left: 10px;
+  }
+
+
+  .category-heading {
+    @include bar_plus_minus;
+  }
+
+  p.error-alert , p.search-tips-text {
+    b, strong {
+      font-weight: bold;
+    }
+    br {
+      display: block;
+    }
+    margin: 10px;
+    @include adjust-font-size-to($base-font-size);
+  }
+
+  .mw-category_contents > a  {
+    padding-left: 20px;
+    @include bar_chevron;
+   }
+}

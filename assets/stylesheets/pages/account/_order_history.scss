@@ -1,0 +1,29 @@
+.mw-order_history {
+
+  th {
+    font-weight: bold;
+  }
+
+  tr {
+    &.pager {
+      th{
+        margin: 10px;  
+      }
+    }
+
+    td {
+      padding: 5px;
+      padding-right: 10px;
+    }
+  }
+
+  tbody {
+    tr:nth-child(odd) {
+      background: $gray3;
+    }
+
+    tr:nth-child(even) {
+      background: #fff;
+    }
+  }
+}

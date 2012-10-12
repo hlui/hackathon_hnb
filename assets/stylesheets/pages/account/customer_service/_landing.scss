@@ -1,0 +1,10 @@
+.mw-cust_landing {
+
+
+  .blurb {
+    > p {
+      @include adjust-font-size-to($base_font_size);
+      @include leader(1);
+    }
+  }
+}

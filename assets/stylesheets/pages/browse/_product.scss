@@ -1,0 +1,289 @@
+.mw-product {
+  .mw-bazaar {
+    display: none;
+  }
+  
+  #breadcrumb-left {
+    * {
+      display: inline-block;
+      padding-left: 5px;
+      color: $gray1;
+    }
+
+    #breadcrumb-text {
+      font-weight: bold; 
+    }
+
+    @include adjust-font-size-to(12px);
+    @include padding-leader(.25);
+    @include padding-trailer(.25);
+
+    border-bottom: 1px solid $gray1;
+  }
+
+  #info-all-variations-link {
+    display: none;
+  }
+
+  #top {
+    width: 100%;
+
+    #info-image {
+      display: inline-block;
+      width: 40%;
+      padding: 10px;
+      text-align: center;
+
+      p#info-sku {
+        @include leader(.25);
+        color: $gray2;
+        @include trailer(1);
+      }
+    }
+
+    #info-text {
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 10px;
+      @include leader(1);
+      width: 50%;
+      vertical-align: top;
+
+      #info-flavour, #info-quantity {
+        font-size: $h2_size;
+      }
+
+      #info-prod-price{
+        @include leader(1);
+        font-size: $h2_size;
+      }
+
+      #info-save {
+        @include trailer(1);
+      }
+
+      .red {
+        color: $red1; 
+      }
+      .bold {
+        font-weight: bold;
+      }
+
+      #oos-message {
+        @include leader(1);
+      }
+
+      #info-main-prod-buy-now {
+        @include leader(1);
+
+        // Low stock, hide it
+        > img { display: none; }
+
+        > a {
+          @extend .mw_btn3; 
+          padding: 10px;
+          text-align: center;
+          > img { display: none; }
+        }
+      }
+    }
+  }
+
+  .product-detail-social-bookmarks {
+    margin: 0 10px;
+    .addthis_default_style > a {
+      margin-right: 25px;
+    }
+    .addthis_button_tweet {
+      width: 80px;
+    }
+    .addthis_button_facebook_like {
+      width: 75px;
+    }
+    .addthis_button_google_plusone {
+      width: 60px;
+    }
+    .addthis_counter {
+      display: none !important;
+    }
+  }
+
+  #prod-info-left {
+    // Product Title
+    #info-product {
+      @extend .mw_h1; 
+      padding-left: 10px;
+      color: $green;
+    }
+
+    // Additional Products
+    div[class="mw-additional"] {
+      margin: 0 10px;
+      @include leader(1);
+      @include border-radius(3px);
+      @include box-shadow(0 1px 2px #BBB);
+      
+      border: 1px solid $color3;
+      @include trailer(1);
+
+      color: $gray1;
+      
+      .mw-product_num_header {
+        border-bottom: 1px solid $color3;
+        color: $black;
+        margin: 10px 10px 5px 10px;
+        padding-bottom: 5px;
+        
+        .mw-prod_num, .mw-prod_num_label {
+          display: inline-block;
+          font-weight: bold;
+        }
+      }
+
+      .header-row {
+        display: inline-block;
+        width: 49%;
+        > div {
+          font-weight: bold;
+          padding: 5px 10px;
+        }
+      }
+      .info-row {
+        display: inline-block;
+        width: 49%;
+        text-align: right;
+        > div {
+          padding: 5px 10px;
+        }
+      }
+      .button-row {
+        margin: 10px;
+
+        .but-pad, .but-pad2 {
+          display: none;
+        }
+
+        .mw-fav_button {
+          @extend .mw_btn4; 
+          padding: 5px;
+          text-align: center;
+          > img { display: none; }
+        }
+        .mw-cart_button {
+          @extend .mw_btn3; 
+          padding: 3.5px;
+          text-align: center;
+          position: relative;
+          float: right;
+          bottom: 5px;
+
+          > img { display: none; }
+        }
+
+        .white.padoos {
+          color: $red1;
+          font-weight: bold;
+          float: right;
+        }
+      }
+    }
+
+
+    // Product description
+    #info-product-description {
+      margin: 0 10px;
+      @include leader(1);
+      @include trailer(1);
+
+      color: black;
+      > b {
+        display: block;
+        font-weight: bold;
+      }
+    }
+  }
+  
+  #info-variations {
+    display: none;
+  }
+
+  // Label Info
+  #prod-info-right {
+    #top-tabs {
+      @extend .mw_bar1;
+      @include bar_plus_minus;
+    }
+    #tab-info {
+      margin: 0 10px;
+
+      span {
+        display: block;
+        font-weight: bold;
+      }
+      #prod-detail-label {
+        width: 100%;
+      }
+      td {
+        @include adjust-font-size-to($base_font_size);
+        line-height: 1.8em;
+      }
+    }
+    .bold {
+      font-weight: bold;
+    }
+    .rule2 {
+      background: #1A1A1A;
+      height: 1px; 
+    }
+    h2 {
+      @extend .mw_h2;
+    }
+  }
+
+  // Reviews
+  .mw-reviews_toggler {
+    .mw-reviews_button {
+      @extend .mw_bar1;
+      @include bar_plus_minus;
+
+      // Bottom border when button is closed makes the footer separator look too big
+      &[data-ur-state='disabled'] {
+        margin-bottom: 0px;
+      }
+    }
+    .BVBrowserWebkit {
+      margin: 0 10px;
+    }
+  }
+
+  // Report inappropriate review popup
+  .BVDIPopin {
+    left: auto !important;
+    top: auto !important;
+    width: 95% !important;
+
+    textarea {
+      width: 100% !important;
+    }
+  }
+
+  .BVRRPrimarySummary {
+    width: 100% !important;
+  }
+
+  a[title='write a review'] {
+    position: relative;
+    z-index: -10;
+  }
+
+  // Bazaar Voice
+  #BVRRDisplayContentHeaderID, #BVRRSimplePagerID, .BVRRRatingsHistogramButton, .BVRRRatingSummaryLinks, #BVRRRatingSummaryLinkWriteFirstID, #BVRRDisplayContentNoReviewsID {
+    display: none;
+  }
+  .BVRRRatingContainerStar, #BVRRRatingSummaryNoReviewsWriteImageLinkID {
+      margin: 0 10px;
+      float: none;
+      @include leader(.5);
+      @include trailer(1);
+  }
+}

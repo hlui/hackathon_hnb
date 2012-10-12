@@ -1,0 +1,129 @@
+.mw-receipt {
+  margin: 0 10px;
+  color: $black;
+
+  // Header image
+  .mw-top_logo {
+    display: block;
+    margin: 0 auto;
+  }
+
+  // Thank you for your order
+  .checkout-title {
+    @extend .mw_h1;
+    text-align: center;
+  }
+
+  a[href] {
+    color: $red1;
+  }
+
+  // Icons & text
+  #complete-header-links {
+    div.mw-icon_label:not(first) {
+      @include leader(1);
+      @include trailer(1);
+      img {
+        float:left;
+      }
+
+      p {
+        margin-left: 45px;
+      }
+    }
+    @include trailer(1);
+  }
+
+  // Adresses
+  .pad-left-receipt {
+    @include leader(1);
+    margin: 0 -10px; 
+    @extend .mw_bar4;
+    text-align: center;
+    @include adjust-font-size-to($h2_size);
+  }
+  .complete-title-rec, #complete-basket-title {
+    margin: 0 -10px;      
+    background-color: $gray2;
+    @include adjust-font-size-to($emp_size);
+    text-align:center;
+    font-weight: bold;
+    @include trailer(.5);
+    color: white;
+  }
+
+  #complete-billing-address-rec, #complete-shipping-address-rec {
+
+    br {
+      display: block;
+    }
+
+    .mw-form_left {
+      float: left;
+      //@include adjust-font-size-to($h2-size);
+      color: $gray1;
+    }
+    .mw-form_right {
+      text-align:right; 
+      //@include adjust-font-size-to($h2-size);
+      color: $black;
+
+      &:nth-of-type(2), &:nth-of-type(4) {
+        border-bottom: 1px solid #BBB; 
+      }
+    }
+  }
+
+  // Shopping basket items
+  .card-no {
+    @include trailer(1);
+  }
+  #complete-basket-grid {
+    @import "pages/checkout/_basket.scss";
+  }
+
+  // Rewards for life
+  #rfl-banner { 
+    > img {
+      display: none;
+    }
+    .mw-rfl_banner {
+      margin: 0 -10px;
+      background-color: $gray2;
+      @include adjust-font-size-to($emp_size);
+      text-align:center;
+      font-weight: bold;
+      @include trailer(.5);
+      color: white;
+    }
+  }
+
+  .rfl-points-info {
+    @include adjust-font-size-to($h2_size);
+    line-height: 1em;
+    @include padding-trailer(1);
+    @include trailer(1);
+    border-bottom: 1px $gray3 solid;
+  }
+
+  // Footer
+  #complete-footer {
+    > img {
+      display: none;
+    }
+    
+    .no-print {
+      text-align:center;
+      @include trailer(1);
+    }
+
+    .postal-warning {
+      @include trailer(1);
+    }
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+}

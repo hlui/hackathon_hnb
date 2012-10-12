@@ -1,0 +1,69 @@
+.mw-footer {
+  background-color: #F5F5F5;
+  padding: 10px 10px 10px 10px;
+  @include box-shadow(inset 0 3px 0 #c1c1c1);
+  
+
+  // Sign Up For Email Specials
+  .mw-email_special {
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    color: $green;
+    text-shadow: 0 1px 0 #fff;
+  }
+
+  // Customer Services
+  .mw-customer_service {
+    @include adjust-font-size-to($h2_size);
+    display: block;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff;
+    color: $gray2;
+  }
+
+  // Copyright Note
+  .mw-copyright {
+    @include leader(0.5);
+    a {
+      display: block;
+      text-align: center;
+      font-weight: normal;
+      line-height: $base_font_size;
+      font-size: $emp_size;
+      color: $gray2;
+      text-shadow: 0 1px 0 #fff;
+    }
+    // Powered by Moovweb
+    .mw-powered_by_moovweb {
+      @include leader(0.5);
+      color: $green;
+      text-align: center;
+      font-size: 11px;
+    }
+  }
+
+  // My Account | My favourites | Shipping & returns
+  // Contact us | Site feedback | FAQ's
+  .mw-acc_footer_bar, .mw-contact_footer_bar, .mw-desktop_link{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: $green;
+    text-shadow: 0 1px 0 #fff;
+    line-height:1.75em;
+
+    a {
+      font-weight: bold;
+      color: $green;
+      text-shadow: 0 1px 0 #fff;
+      
+      &:not(:last-of-type)::after {
+        padding: 0 5px;
+        content:"|"
+      }
+    }
+  }
+
+}

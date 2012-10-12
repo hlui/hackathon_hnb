@@ -1,0 +1,156 @@
+// Used in both cart and checkout
+#basket {
+  #table-header, .offer-banner {
+    display: none;
+  }
+
+  .red {
+    color: $red1;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .center {
+    text-align: center;
+    @include leader(1);
+    @include trailer(1);
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .update-row { 
+    text-align: right; 
+    @include leader(1);
+    @include trailer(1);
+
+    > div {
+      @include adjust-font-size-to($base_font_size); 
+
+      .mw_btn4 {
+        display: inline-block;
+        padding: 5px;
+      }
+      input {
+        display: none;
+      }
+
+      &[colspan='2'], &[colspan='3'] {
+        display: none;
+      }
+    }
+  }
+
+  .free-ship-message {
+    div[colspan='3'] {
+      width: 49%;
+      display: inline-block;
+      
+      &.buy-more-button {
+        width: auto; 
+        float: right;
+        > a {
+          text-align:right;
+          @extend .mw_btn2;
+          padding: 5px;
+          img {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .row {
+    border-bottom: 2px solid $gray3;
+
+    // Item name
+    .basket-item-name {
+      > a {
+        @include adjust-font-size-to($h2_size);
+        color: $red1;
+      }
+      > span {
+        padding-left: 20px;
+        color: $gray3;
+      }
+    }
+
+    .mw-you_pay {
+        @include adjust-font-size-to($h2_size);
+        color: $gray1;
+    }
+
+    .mw-rrp {
+        @include adjust-font-size-to($h3_size);
+        color: $gray2;
+    }
+
+    // Trash icon
+    .basket-item-remove {
+      float: right;
+      > a:not(.mw-remove_text) {
+        display: inline-block;
+        margin-left:15px;
+      }
+      .mw-remove_text {
+        display:block;
+        color: $red1;
+      }
+    }
+
+    .mw-price {
+      float: right;
+    }
+
+    .basket-item-quantity {
+      @include leader(1);
+      @include trailer(1);
+      
+      .mw-label {
+        color: $red2;
+        padding-right:5px;
+      }
+      .mod-quantity {
+        padding: 3px 8px;
+        margin: 0 10px;
+        background-color: $blue;
+        color: white;
+      }
+      input {
+        text-align: center;
+        width: 30px;
+      }
+    }
+
+  }
+  
+  .shipping-row, .subtotal-row {
+    @include adjust-font-size-to($h3_size);
+    font-weight: bold;
+    color: $gray2;
+
+    > div {
+      display: inline-block;
+    }
+    div[colspan='1'] {
+      float: right;
+    } 
+  }
+  
+  .finaltotal-row {
+    @include adjust-font-size-to($h2_size);
+    font-weight: bold;
+    color: $gray1;
+
+    > div {
+      display: inline-block;
+    } 
+    div[colspan='1'] {
+      float: right;
+    }
+  }
+}

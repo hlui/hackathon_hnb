@@ -1,0 +1,55 @@
+.mw-category_image {
+  #breadcrumb-left {
+    @include adjust-font-size-to(12px);
+    @include padding-leader(.25);
+    @include padding-trailer(.25);
+
+    border-bottom: 1px solid $gray1;
+
+    * {
+      display: inline-block;
+      padding-left: 5px;
+      color: $gray1;
+    }
+    .blue {
+      font-weight: bold;
+    }
+  }
+  
+  #main-banner {
+    @extend .mw_h2;
+  }
+
+  .mw_h2 {
+    padding: 0 10px; 
+  }
+
+
+  .clickbox, .bannerl > a, .bannerr >a {
+    display: block;
+    @extend .mw_bar1;
+    @include bar_chevron;
+
+    // adjust the chevron positioning
+    div {
+//      top: -10px !important;
+    }
+  }
+
+  // Removing the bottom border (made the footer separator look too big)
+  #main-box > div:last-of-type > a {
+    border-bottom: 0px;
+  }
+
+  #current_offers_row {
+    text-align: center;
+
+    & > img {
+      margin-top: 10px;
+    }
+
+    a > img {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.mw-cart {
+
+  #main {
+    margin: 0 10px;
+
+    #basket-text-top {
+      > p {
+        @include adjust-font-size-to($h1_size);
+        font-weight: bold;
+      }
+    }
+    #basket-buttons-top {
+      display: none;
+    }
+
+    .basket-buttons {
+      text-align: center;
+      // Continue Shopping
+      .continue2 {
+        @include leader(1);
+        padding: 10px;
+        img {
+          display: none;
+        }
+      }
+
+      // Checkout
+      .basket-checkout-pad {
+        @include leader(1);
+        > div {
+          padding: 10px;
+        }
+        input {
+          display: none;
+        }
+      }
+    }
+
+    #removedItems {
+
+      .heading {
+        font-weight: bold;
+      }
+
+      .mw-tr {
+        @include leader(1);
+      }
+      
+      .reason {
+        color: $red1;
+      }
+
+    }
+    
+    @import "pages/checkout/_basket.scss";
+  }
+}

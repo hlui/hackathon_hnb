@@ -1,0 +1,220 @@
+// These mixins were used often in Compass. 
+// Taken from Bourbon (http://thoughtbot.com/bourbon)
+
+@mixin prefixer ($property, $value,
+                 $webkit: true,
+                    $moz: true,
+                     $ms: false,
+                      $o: false,
+                   $spec: true) {
+  @if $webkit { -webkit-#{$property}: $value; }
+  @if $moz    {    -moz-#{$property}: $value; }
+  @if $ms     {     -ms-#{$property}: $value; }
+  @if $o      {      -o-#{$property}: $value; }
+  @if $spec   {         #{$property}: $value; }
+}
+
+@mixin box-shadow ($shadow-1,
+  $shadow-2: false, $shadow-3: false,
+  $shadow-4: false, $shadow-5: false,
+  $shadow-6: false, $shadow-7: false,
+  $shadow-8: false, $shadow-9: false)
+  {
+    $full: compact($shadow-1, $shadow-2, $shadow-3, $shadow-4,
+                   $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9);
+
+    @include prefixer(box-shadow, $full, webkit, not moz);
+}
+
+@mixin box-sizing ($box) {
+//  content-box | border-box | inherit
+  @include prefixer(box-sizing, $box);
+}
+
+
+@mixin background(
+  $background-1       , $background-2: false,
+  $background-3: false, $background-4: false,
+  $background-5: false, $background-6: false,
+  $background-7: false, $background-8: false,
+  $background-9: false, $background-10: false,
+  $fallback: false
+) {
+  $backgrounds: compact($background-1, $background-2,
+                $background-3, $background-4,
+                $background-5, $background-6,
+                $background-7, $background-8,
+                $background-9, $background-10);
+
+  $fallback-color: false;
+  @if (type-of($fallback) == color) or ($fallback == "transparent") {
+    $fallback-color: $fallback;
+  }
+  @else {
+    $fallback-color: extract-background-color($backgrounds);
+  }
+
+  @if $fallback-color {
+    background-color: $fallback-color;
+  }
+  background: background-add-prefix($backgrounds, webkit);
+  background: background-add-prefix($backgrounds, moz);
+  background: background-add-prefix($backgrounds, ms);
+  background: background-add-prefix($backgrounds, o);
+  background: background-add-prefix($backgrounds);
+}
+
+@function extract-background-color($backgrounds) {
+  $final-bg-layer: nth($backgrounds, length($backgrounds));
+  @if type-of($final-bg-layer) == list {
+    @for $i from 1 through length($final-bg-layer) {
+      $value: nth($final-bg-layer, $i);
+      @if type-of($value) == color {
+        @return $value;
+      }
+    }
+  }
+  @return false;
+}
+
+
+@function background-add-prefix($backgrounds, $vendor: false) {
+  $backgrounds-prefixed: ();
+
+  @for $i from 1 through length($backgrounds) {
+    $shorthand: nth($backgrounds, $i); // Get member for current index
+    $type: type-of($shorthand); // Get type of variable - List or String
+
+    // If shorthand is a list
+    @if $type == list {
+      $first-member: nth($shorthand, 1); // Get first member of shorthand
+
+      // Linear Gradient
+      @if index(linear radial, nth($first-member, 1)) {
+        $gradient-type: nth($first-member, 1); // linear || radial
+
+        // Get actual gradient (red, blue)
+        $gradient-args: false;
+        $shorthand-start: false;
+        // Linear gradient and positioning, repeat, etc. values
+        @if type-of($first-member) == list {
+          $gradient-args: nth($first-member, 2);
+          $shorthand-start: 2;
+        }
+        // Linear gradient only
+        @else {
+          $gradient-args: nth($shorthand, 2); // Get actual gradient (red, blue)
+          $shorthand-start: 3;
+        }
+
+        $gradient: render-gradients($gradient-args, $gradient-type, $vendor);
+        @for $j from $shorthand-start through length($shorthand) {
+          $gradient: join($gradient, nth($shorthand, $j), space);
+        }
+        $backgrounds-prefixed: append($backgrounds-prefixed, $gradient, comma);
+      }
+
+      // Image with additional properties
+      @else {
+        $backgrounds-prefixed: append($backgrounds-prefixed, $shorthand, comma);
+      }
+
+    }
+
+    // If shorthand is a simple string, color or image
+    @else if $type == string {
+      $backgrounds-prefixed: join($backgrounds-prefixed, $shorthand, comma);
+    }
+  }
+  @return $backgrounds-prefixed;
+}
+
+@mixin box($orient: inline-axis, $pack: start, $align: stretch) {
+  @include display-box;
+  @include box-orient($orient);
+  @include box-pack($pack);
+  @include box-align($align);
+}
+
+@mixin display-box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+}
+
+@mixin box-orient($orient: inline-axis) {
+// horizontal|vertical|inline-axis|block-axis|inherit
+  @include prefixer(box-orient, $orient);
+}
+
+@mixin box-pack($pack: start) {
+// start|end|center|justify
+  @include prefixer(box-pack, $pack);
+}
+
+@mixin box-align($align: stretch) {
+// start|end|center|baseline|stretch
+  @include prefixer(box-align, $align);
+}
+
+@mixin box-direction($direction: normal) {
+// normal|reverse|inherit
+  @include prefixer(box-direction, $direction);
+}
+
+@mixin box-lines($lines: single) {
+// single|multiple
+  @include prefixer(box-lines, $lines);
+}
+
+@mixin box-ordinal-group($int: 1) {
+  @include prefixer(box-ordinal-group, $int);
+}
+
+@mixin box-flex($value: 0.0) {
+  @include prefixer(box-flex, $value);
+}
+
+@mixin box-flex-group($int: 1) {
+  @include prefixer(box-flex-group, $int);
+}
+
+@mixin border-radius ($radii) {
+  @include prefixer(border-radius, $radii, webkit, not moz);
+}
+
+@mixin border-top-left-radius($radii) {
+  @include prefixer(border-top-left-radius, $radii, webkit, not moz);
+}
+
+@mixin border-top-right-radius($radii) {
+  @include prefixer(border-top-right-radius, $radii, webkit, not moz);
+}
+
+@mixin border-bottom-left-radius($radii) {
+  @include prefixer(border-bottom-left-radius, $radii, webkit, not moz);
+}
+
+@mixin border-bottom-right-radius($radii) {
+  @include prefixer(border-bottom-right-radius, $radii, webkit, not moz);
+}
+
+@mixin border-top-radius($radii) {
+  @include border-top-left-radius($radii);
+  @include border-top-right-radius($radii);
+}
+
+@mixin border-right-radius($radii) {
+  @include border-top-right-radius($radii);
+  @include border-bottom-right-radius($radii);
+}
+
+@mixin border-bottom-radius($radii) {
+  @include border-bottom-left-radius($radii);
+  @include border-bottom-right-radius($radii);
+}
+
+@mixin border-left-radius($radii) {
+  @include border-top-left-radius($radii);
+  @include border-bottom-left-radius($radii);
+}

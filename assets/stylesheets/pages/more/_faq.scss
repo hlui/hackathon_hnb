@@ -1,0 +1,89 @@
+.mw-faq {
+
+  #main {
+    // Page contents
+    #content{
+      #page-top-box {
+        display: none;
+      }
+
+      #page-title-nopad {
+     
+        @extend .mw_h1;
+        > br {
+          display: block;
+        }
+      }
+
+      // Infocenter Heading 
+      .infocenter-header {
+        @extend .mw_h2;
+        padding: 10px 0;
+        line-height: 1em;
+        display: block;
+      }
+
+      // Infocenter Navigation
+      .infocentrenav {
+         span.info-header {
+            display: block;
+            @extend .mw_bar4;
+            background-image: none;
+            padding: 5px;
+            @include leader(1);
+         }
+        
+        > a:not(.mw-heading) {
+          display: block;
+          @extend .mw_bar1;
+          @include bar_chevron;
+        } 
+
+        div.mw-arrow_icon {
+          top: -10px !important;
+        }
+
+        > br {
+          display: none;
+        }
+      }
+
+      // Header
+      .infocenter-header {
+        .faq-top-of-page {
+          font-size: $emp_size;
+          color: $gray1;
+          display: block;
+          text-align: right;
+        } 
+
+        .infocenter-title {
+          font-weight: bold; 
+          display: block;
+        }
+      }
+
+      h4 {
+        display: none;
+      }
+
+      // Content
+      .infocenter-content {
+        @include adjust-font-size-to($base_font_size);
+        margin-bottom: 0px;
+        b {
+          @extend .mw_h2;
+          padding: 20px 0 10px;
+          line-height: 1em;
+          display: block;
+        }
+      }
+
+      table {
+        width: 100%;
+        @include leader(1);
+        @include trailer(1);
+      }
+    }
+  }
+}

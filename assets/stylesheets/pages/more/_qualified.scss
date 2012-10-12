@@ -1,0 +1,86 @@
+body.mw-qualified {
+  #QualifiedToAdvise {
+    padding: 0 10px;
+
+    p {
+      @include leader(.5);
+      @include trailer(.5);
+    }
+
+    p.heading {
+      @extend .mw_h2; 
+      line-height: 1.5em;
+    }
+
+    .want-to-know-more {
+      @extend .mw_h3; 
+    }
+    .get-in-touch {
+      @include trailer(1);
+      > a {
+        @extend .mw_btn3;
+        padding: 10px 5px;
+      }
+    } 
+
+    .supplement-section {
+      .signature {
+        font-size: 150%;
+        font-style: italic;
+        font-family: Georgia,serif;
+        color: $green;
+        text-align: center;
+      } 
+      .column-1, .column-2 {
+        border: 1px solid $green;
+        padding: 0 5px;
+        @include border-radius(3px);        
+        @include trailer(.5)
+      }
+    }
+
+    table.level-awards {
+      td, th {
+        &:not(.spacer) {
+          border: 1px solid $green;
+          padding: 0 5px;
+          @include border-radius(3px);        
+        }
+      }
+
+      th:not(.spacer) {
+        background-color: $green;
+        color: #FFF;
+        font-weight: bold;
+      }
+    }
+
+    .case-studies {
+      p.case-study-1 {
+        background-image: url(http://hollandandbarrett.com/images/advice/case-study-1.jpg); 
+      } 
+      p.case-study-2 {
+        background-image: url(http://hollandandbarrett.com/images/advice/case-study-2.jpg); 
+      } 
+      p.case-study-3 {
+        background-image: url(http://hollandandbarrett.com/images/advice/case-study-3.jpg); 
+      } 
+      p {
+        background-position: center 5px;
+        background-repeat: no-repeat;
+        padding: 0 5px;
+        padding-top: 140px;
+        border: 1px solid $green;
+        @include border-radius(3px);        
+        @include trailer(.5)
+      }
+      .full-name {
+        color: $green;
+        font-weight: bold;
+        padding-right: 5px;
+      }
+    }
+
+  }
+
+}

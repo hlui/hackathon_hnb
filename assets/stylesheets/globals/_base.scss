@@ -1,0 +1,76 @@
+// Site-wide styles go here
+// What shouldn't go here
+//   - global declartive classes, mixins, or variables, that goes in -lib.scss
+
+html {
+  height: 100%;
+  //overflow: auto !important;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+  font-family: arial;
+  background: #fff;
+  color: #333;
+  position: relative;
+  min-height: 100%;
+}
+
+
+a {
+  font-family: arial;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+
+a, a:link {
+  -webkit-tap-highlight-color: rgba(225, 244, 204, 0.5);
+}
+
+img {
+  max-width: 100%;
+}
+
+input[type="number"]::-webkit-outer-spin-button {
+  display: none;
+}
+
+br {
+  display: none;
+}
+
+.clearer {
+  display: none !important;
+}
+
+.ui-icon-loading {
+  background: image-url("http://jquerymobile.com/demos/1.2.0/css/themes/default/images/ajax-loader.gif");
+}
+
+.ui-body-a {
+  @include border-radius(8px);
+  border: 1px solid 		#444 /*{a-body-border}*/;
+  background: 			#222 /*{a-body-background-color}*/;
+  color: 					#fff /*{a-body-color}*/;
+  text-shadow: 0 /*{a-body-shadow-x}*/ 1px /*{a-body-shadow-y}*/ 1px /*{a-body-shadow-radius}*/ #111 /*{a-body-shadow-color}*/;
+  font-weight: normal;
+  background-image: -webkit-gradient(linear, left top, left bottom, from( #444 /*{a-body-background-start}*/), to( #222 /*{a-body-background-end}*/)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient( #444 /*{a-body-background-start}*/, #222 /*{a-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
+  background-image:    -moz-linear-gradient( #444 /*{a-body-background-start}*/, #222 /*{a-body-background-end}*/); /* FF3.6 */
+  background-image:     -ms-linear-gradient( #444 /*{a-body-background-start}*/, #222 /*{a-body-background-end}*/); /* IE10 */
+  background-image:      -o-linear-gradient( #444 /*{a-body-background-start}*/, #222 /*{a-body-background-end}*/); /* Opera 11.10+ */
+  background-image:         linear-gradient( #444 /*{a-body-background-start}*/, #222 /*{a-body-background-end}*/);	
+}
+
+.ui-content {
+  padding: 0 !important;
+}
+
+.ui-header * {
+  position: static !important;
+}
+
+.mw_mainlogo {
+  text-align: center;
+  margin: 15px 0;
+}

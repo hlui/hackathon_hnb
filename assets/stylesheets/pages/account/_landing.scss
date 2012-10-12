@@ -1,0 +1,52 @@
+.mw-account_landing {
+
+  .topbar {
+    margin: 0 10px;
+  }
+
+  #icons {
+    a {
+      @extend .mw_btn3;
+      padding: 5px;
+      min-width: 100px;
+      text-align: center;
+      display: block;
+      margin: 0 10px;
+      @include trailer(1);
+    }
+    img {
+      display: none;
+    }
+  }
+
+  // Rewards for life
+  #rfl {
+  
+    // Why it matters - heading
+    > a > span {
+      @extend .mw_h2; 
+      padding-left: 10px;
+    }
+
+    .rfl-contents {
+      margin: 0 10px;
+
+      // Activate your card
+      a.signup {
+        @extend .mw_btn3;
+        padding: 5px;
+        min-width: 100px;
+        text-align: center;
+        display: block; 
+        @include trailer(1);
+      }
+
+      > a > img {
+        @include leader(1);
+        margin: 0 auto;
+        display: block;
+        @include trailer(1);
+      }
+    }
+  }
+}

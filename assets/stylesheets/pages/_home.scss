@@ -1,0 +1,162 @@
+.mw-home {
+  .mw_carousel_wrap {
+    margin: 0 -10px;
+
+    #mw_main_carousel {
+      width: 100%;
+      display: block;
+
+      #mw_view_container {
+        border-bottom: 1px solid $gray3;
+        @include box-shadow(inset 0px 1px 0px rgba(255,255,255,.5));
+        min-height: 121px;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+        #mw_carousel_scroll {
+          display: none;
+          &[style] {
+            display: block;
+            overflow: hidden;
+            min-height: 103px;
+          }
+        }
+
+        a {
+          display: block;
+          // Remove when JSON comes in
+          float: none;
+          // Remove when JSON comes in
+          img {
+            margin: 0px auto;
+          }
+        }
+      } 
+
+      [data-ur-carousel-component="dots"] {
+        margin-top: 5px;
+
+        [data-ur-carousel-component="dot"] {
+          width: 8px;
+          height: 8px;
+          margin: 0 3px;
+          
+          &[data-ur-state="active"] {
+            background: $green; 
+          }
+          &[data-ur-state="inactive"] {
+            background: $gray1; 
+          }
+        }
+      }
+    }
+  }
+  
+  #main {
+    padding: 0 10px;
+  }
+
+  .mw-rewards {
+    .mw-rewards_body {
+      @include adjust-font-size-to($h2-size);
+      color: $gray1;
+      padding: 0 10px;
+      div {
+        a {
+          font-size: 13px;
+          color: $green;
+          font-weight: bold;
+
+          &:first-of-type {
+            &::after {
+              padding: 10px;
+              content: '|';
+            }
+          } 
+        }
+      }
+    }
+  }
+  .mw-qualified {
+    @include leader(1);
+    @include trailer(1);
+    .mw-qualified_body {
+      color: $gray1;
+      padding: 0 10px;
+      @include padding-leader(.5);
+      @include padding-trailer(.5);
+      
+      div {
+        a {
+          font-size: 13px;
+          color: $green;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .mw-email_offer {
+    color: $gray1;
+    position: relative;
+    padding-left: 27px;
+    font-weight: bold;
+    margin: 10px;
+    @include leader(1);
+      
+    &::before {
+      @extend .icons-envelope;
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+  }
+
+  .mw-social_share {
+    @include box-sizing(content-box);
+    @include leader(.5);
+    @include trailer(1);
+    @include adjust-font-size-to(12px);
+
+    font-weight: bold;
+    position: relative;
+    height: 24px;
+    padding: 0 10px;
+   
+    a {
+      color: $gray1;
+      position: relative;
+      padding-left: 27px;
+      @include leader(.5);
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+    }
+
+    .mw-social_twitter {
+      float: right;
+      @include padding-leader(.25);
+
+      &::before {
+        @extend .icons-twitter;
+      }
+    }
+    
+    .mw-social_facebook {
+      float: left;
+      @include padding-leader(.25);
+
+      &::before {
+        @extend .icons-fb;
+      }
+    }
+  }
+  .mw-qualified_head, .mw-rewards_head {
+    padding-left: 10px;
+  }
+}

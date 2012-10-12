@@ -1,0 +1,170 @@
+/*  #######################################
+    ########### SPRITED ICONS #############
+    #######################################  */
+
+// Set the spacing to be 10px apart (remove for no spacing)
+$icons-spacing: 15px;
+
+// Change the location of an icon in your sprite
+// Format is $foldername-iconname-position (example below)
+// $icons-plus-position: 100%;
+
+// https://gist.github.com/gists/2879137
+// this is for Compass 0.12 (require)
+// this is for at least Manhattan v.3.4.136
+
+@import "icons/*.png"; /**/
+@include all-icons-sprites;
+
+$all-icons-sprites: basket browsearrow_down browsearrow_up chevron_white chevron darkarrow_down darkarrow_up downarrow envelope fb grid1 grid2 list1 list2 logo minus plus pin search smalldownarrow smalluparrow sort trash twitter telephone;
+
+@import "_retina.scss";
+// if all the images in your icons/ folder are retina size:
+@include all-retina-sprites($icons-sprites, $all-icons-sprites);
+ 
+// if only some of the images are retina size and they have a filename convention ex. x2-a.png, x2-b.png, x2-c.png
+// @include retina-sprites(-sprites, sprite-names(sprite-map("icons/x2-*.png")));
+ 
+// otherwise you can manually list each retina image
+// @include retina-sprites(-sprites, a b c);
+ 
+// Example equivalent of making background-position-x: 100%;
+// .icons-x2-accordion-arrow {
+//   @include retina-background-position(-sprites, x2-accordion-arrow, 100%);
+// }
+
+// Define all heights and widths of sprite icons below
+// Sprite class is the name of the <sprite folder>-<icon name>
+// ie. sprite/foo.png will result in .sprite-foo
+
+// Example
+// .icons-plus, .icons-minus {
+//   width: 19px;
+//   height: 19px;
+//   display: inline-block;
+// }
+
+.icons-logo, .mw_logo {
+  width: 230px;
+  height: 22px;
+}
+
+.icons-browsearrow_up {
+  width: 14px;
+  height: 13px;
+}
+
+.icons-browsearrow_down {
+  width: 14px;
+  height: 13px;
+}
+
+.icons-darkarrow_up {
+  width: 14px;
+  height: 13px;
+}
+
+.icons-darkarrow_down {
+  width: 14px;
+  height: 13px;
+}
+
+.icons-envelope {
+  width: 24px;
+  height: 16px;
+}
+
+.icons-fb {
+  width: 25px;
+  height: 25px;
+}
+
+.icons-grid1 {
+  width: 26px;
+  height: 26px;
+}
+
+.icons-grid2 {
+  width: 26px;
+  height: 26px;
+}
+
+.icons-list1{
+  width: 26px;
+  height: 26px;
+}
+
+.icons-list2 {
+  width: 26px;
+  height: 26px;
+}
+
+.icons-pin {
+  width: 12px;
+  height: 20px;
+}
+
+.icons-search {
+  width: 16px;
+  height: 16px;
+}
+
+.icons-sort {
+  width: 14px;
+  height: 10px;
+}
+
+.icons-twitter {
+  width: 25px;
+  height: 25px;
+}
+
+.icons-chevron {
+  width: 7px;
+  height: 11px;
+}
+
+.icons-chevron_white {
+  width: 7px;
+  height: 11px;
+}
+
+.icons-downarrow {
+  width: 14px;
+  height: 9px;
+}
+
+.icons-plus {
+  width: 18px;
+  height: 18px;
+}
+
+.icons-minus {
+  width: 18px;
+  height: 18px;
+}
+
+.icons-smalluparrow {
+  width: 7px;
+  height: 4px;
+}
+
+.icons-smalldownarrow {
+  width: 7px;
+  height: 4px;
+}
+
+.icons-trash {
+  width: 24px;
+  height: 28px;
+}
+
+.icons-telephone {
+  width: 17px;
+  height: 17px;
+}
+
+.icons-basket {
+  width: 17px;
+  height: 17px;
+}

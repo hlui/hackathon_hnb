@@ -1,0 +1,16 @@
+body.mw-rfl_faq {
+  
+  // Chevrons
+  .infocenter-navlist {
+    > a {
+      &:after {
+        @extend .icons-chevron;
+        display: inline-block;
+        float: right;
+        position: relative;
+        top: 2px;
+        content: '';
+      }
+    }
+  }
+}

@@ -1,0 +1,270 @@
+.mw-checkout {
+  
+  input[type='text'], input[type='password'], input[role='textbox'], textarea {
+    @include singlecolumn_input;
+  }
+
+  select {
+    height: 35px; 
+    min-width: 100px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    background-image: linear-gradient(top, #fff 0%, #ededed 100%);
+    font-weight: bold;
+    color: #666;
+    @include adjust-font-size-to($base-font-size);
+  }
+
+  #main {
+
+    #checkout {
+      #checkout-top {
+        margin: 0 10px;
+        // ---------------- 
+        // Page title
+        // ---------------- 
+        #checkout-info {
+          .checkout-title {
+            @include adjust-font-size-to($h1_size);
+            color: $black;
+          }
+          .info {
+            @include adjust-font-size-to($base_font_size);
+            color: $black;
+          }
+        }
+        #checkout-buttons2 {
+          display: none;
+        }
+      }
+        
+      // ---------------- 
+      // Main Content container
+      // ---------------- 
+      #checkout-main {
+        @import "pages/checkout/_basket.scss";
+        
+        #basket {
+            @include trailer(1);
+        }
+
+        // Addresses
+        .form-left {
+          float: left;
+          //@include adjust-font-size-to($h2-size);
+          color: $gray1;
+          font-weight: bold;
+        }
+        .form-right {
+          text-align:right; 
+          //@include adjust-font-size-to($h2-size);
+          color: $black;
+
+          &:nth-of-type(2), &:nth-of-type(4) {
+            border-bottom: 1px solid #BBB; 
+          }
+        }
+
+        .bold {
+          font-weight: bold;
+        }
+
+        // Headers
+        #shipping-add-col1, #billing-add-col1 {
+          @extend .mw_bar5;
+
+          display: inline-block;
+          width: 100%;
+          
+          #shipping-add-col2, #billing-add-col2 {
+            display: inline-block; 
+            float:right;
+            
+            > a {
+              @extend .mw_btn3; 
+              font-weight: bold;
+              padding: 3px;
+              > img {
+                display: none;
+              }
+            }
+          }
+        }
+
+        // Payment Information
+        #payment-info-box {
+          > input {
+            display: none;
+          }
+          .mw-confirm_order {
+            margin: 0 10px;
+            @include leader(1);
+            @include trailer(1);
+            
+            @extend .mw_btn3;
+            padding:10px;
+            text-align: center;
+            text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+          }
+
+          #payment-info-box-payment-card {
+            .form-left {
+              float: none;
+              font-weight: bold;
+              @include trailer(.25);
+            }
+            .form-right {
+              float: none;
+              text-align: left;
+              @include trailer(.75);
+            }
+            label {
+              font-weight: bold;
+            }
+          }
+        }
+
+        #payment-address-bill, #payment-address-shipp {
+          @include padding-leader(.5);
+          @include padding-trailer(.5);
+          margin: 0 10px;
+        }
+
+        form {
+          margin: 0 10px;
+          
+          // Coupon Voucher Codes, Payment Info, Rewards for Life header
+          #voucher-info-title, #payment-info-title, .mw-rewards_for_life_header {
+            margin: 0 -10px;
+            font-weight: bold;
+            @include trailer(.5);
+          }
+        } 
+
+        #payment-info-title {
+          margin: 0 10px;
+        }
+
+        .formerrorbox {
+          margin: 0 10px;
+          color: $red1;
+        }
+
+        #checkout-bottom-bar, #checkout-top-bar, #voucher-info-title, #payment-info-title, .mw-rewards_for_life_header, .mw-total_header {
+          @extend .mw_bar4;
+          @include adjust-font-size-to($h2-size);
+        }
+
+        .form-span {
+          @include adjust-font-size-to($emp_size);
+          color: $gray1;
+        }
+
+        .coupon-box {
+          margin: 0 10px;
+        }
+
+        .mw-total_row {
+          margin: 0 10px;
+          
+          .mw-total_header {
+            margin: 0 -10px;
+            font-weight: bold;
+            @include trailer(1); 
+          }
+
+          // Shipping and subtotal
+          .shipping-row, .subtotal-row {
+            @include adjust-font-size-to($h3_size);
+            font-weight: bold;
+            color: $gray2;
+
+            > div {
+              display: inline-block;
+            }
+            div[colspan='1'] {
+              float: right;
+            } 
+          }
+         
+          .rfl-rebate-amount {
+            color: $gray1;
+
+            a.mw_voucher_amnt {
+              float: right;
+            }
+          }
+
+          // Total
+          .finaltotal-row {
+            @include adjust-font-size-to($h2_size);
+            font-weight: bold;
+            color: $gray1;
+
+            > div {
+              display: inline-block;
+            } 
+            div[colspan='1'] {
+              float: right;
+            }
+          }
+
+          // Free Shipping
+          .free-ship-message {
+            div[colspan='3'] {
+              width: 49%;
+              display: inline-block;
+              
+              &.buy-more-button {
+                width: auto; 
+                float: right;
+                > a {
+                  text-align:right;
+                  @extend .mw_btn2;
+                  padding: 5px;
+                  img {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        // Rewards for Life
+        #loyalty-info-box {
+          @include trailer(1);
+
+          label[for='loyaltycardno'] {
+            display: none;
+          }
+
+          input[type='text'] {
+            @include trailer(1);
+            @include leader(1);
+          }
+        }
+
+        // Coupon Voucher Codes
+        #voucher-info-box {
+          @include trailer(2);
+
+          label {
+            display: block;
+            font-weight: bold;
+          }
+
+          input[type='image'] {
+            display: none;
+          }
+
+          .noborder {
+            @extend .mw_btn2;
+            float: right;
+            padding: 5px 20px;
+          }
+        }
+      }
+    }
+  }
+}

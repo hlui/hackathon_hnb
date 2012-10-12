@@ -1,0 +1,58 @@
+.mw-favourites {
+
+  .mw-table {
+    @include leader(1);
+
+    .mw-table_item {
+      min-height: 220px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid $gray3;
+
+      div:nth-of-type(1) {
+        float: left;
+        min-height: 200px;
+        img {
+          max-width: 75px;
+          margin-right: 20px; 
+        }
+      }
+
+      // Title
+      div:nth-of-type(2) {
+        @extend .mw_h1; 
+        > a {color: $green;}
+      }
+
+      // Quantity 
+      div:nth-of-type(3) {
+        @extend .mw_h4; 
+        &:before {
+          content: 'Quantity: ';
+        }
+      }
+      
+      // Brand 
+      div:nth-of-type(4) {
+        @extend .mw_h2;
+        padding: 0;
+        > a {color: $black;}
+      }
+
+      .mw_btn4, .mw_btn5 {
+        padding: 5px;
+      }
+    }
+  }
+  .mw-account_btn {
+    white-space: nowrap;
+    float: right;
+  }
+  .mw-btn_spacer {
+    height: 35px;
+  }
+
+  .mw-nofloat {
+    float: none;
+  }
+}

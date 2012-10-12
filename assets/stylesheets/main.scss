@@ -1,0 +1,55 @@
+@import "compass/reset";
+@import "compass";
+
+//@import "globals/_reset.scss";
+
+// Sprites
+@import "globals/_icons.scss";
+
+// Base file contains all the global styles
+@import "globals/_base.scss";
+//@import "globals/_compass.scss";
+
+// File for global Uranium stylings
+@import "globals/_uranium.scss";
+
+// Lib file contains all the global mixins and classes
+@import "globals/_lib.scss";
+@import "globals/_config.scss";
+
+
+// Header & Footer
+@import "sections/_header.scss";
+@import "sections/_footer.scss";
+
+// Pages
+@import "pages/_home.scss";
+@import "pages/_error.scss";
+
+// Browse Pages
+@import "pages/browse/_browse.scss";
+@import "pages/browse/_category_image.scss";
+@import "pages/browse/_category_text.scss";
+@import "pages/browse/_product.scss";
+
+// Account Pages
+@import "pages/account/_account_base.scss";
+@import "pages/account/_login.scss";
+@import "pages/account/_landing.scss";
+@import "pages/account/_favourites.scss";
+@import "pages/account/_order_history.scss";
+@import "pages/account/customer_service/_store_locator.scss";
+@import "pages/account/customer_service/_landing.scss";
+
+// Checkout Pages
+@import "pages/checkout/_cart.scss";
+@import "pages/checkout/_checkout.scss";
+@import "pages/checkout/_receipt.scss";
+
+// More Pages
+@import "pages/more/_more_base.scss";
+@import "pages/more/_faq.scss";
+@import "pages/more/_qualified.scss";
+@import "pages/more/_maps.scss";
+@import "pages/more/rewards_for_life/_rfl.scss";
+@import "pages/more/rewards_for_life/_rfl_faq.scss";

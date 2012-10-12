@@ -1,0 +1,145 @@
+body.mw-more_base {
+
+  #main {
+    input[type='text'], input[type='password'], input[role='textbox'], select, textarea {
+      @include singlecolumn_input;
+    } 
+
+    #menu {
+      display: none;
+    }
+
+    .mw-breadcrumb {
+      * {
+        display: inline-block;
+        color: $gray1;
+      }
+
+      a, span:first-of-type {
+        padding-left: 5px; 
+        &.bold.blue {
+          padding-right: 5px;
+        }
+      }
+
+      #breadcrumb-left {
+        font-weight: bold;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      div.breadcrumb {
+        font-weight: bold;
+      }
+
+      @include adjust-font-size-to(12px);
+      @include padding-leader(.25);
+      @include padding-trailer(.25);
+
+      border-bottom: 1px solid $gray1;
+
+      &.mw-margin {
+        margin: 0 -10px;
+      }
+    }
+
+    #page-title {
+      @extend .mw_h2;
+    }
+
+    h1 {
+      @extend .mw_h1;
+    }
+
+    .rfl-submenu, #RFLPageHeader {
+      display: none;
+    }
+
+    #content {
+      margin: 0 10px;
+    }
+
+    
+    // Infocenter Navigation
+    .infocenter-navlist {
+     > p.infocenter-navlist > a {
+        display: block;
+        @extend .mw_bar4;
+        padding: 5px;
+        @include leader(1);
+     }
+      
+      div.mw-arrow_icon {
+        top: -10px !important;
+      }
+
+      > br {
+        display: none;
+      }
+    }
+
+    .infocenter-title {
+      @extend .mw_h3;
+      color: $black;
+      padding: 10px 0;
+    }
+
+    .infocenter-content {
+      @include adjust-font-size-to($base_font_size);
+      @include trailer(1);
+    }
+
+    br {
+      display: block;
+    }
+
+    strong, .first-label {
+      font-weight: bold;
+    }
+
+    ol {
+      padding: 0 0 10px 10px;
+    }
+
+    .button-link {
+      @extend .mw_btn3;
+      padding: 10px;
+      display: inline-block;
+      @include trailer(1);
+    }
+
+
+    // For the article pages
+    #champion-page-info {
+      > .vitamins {
+        @include leader(1);
+      }
+    }
+
+
+    #champion-page-links {
+      #vitamins-title {
+        @extend .mw_h3;
+      }
+
+      .vitamins-links {
+        br {
+          display: none;
+        }
+        > a {
+          @extend .mw_bar1;
+          &:after {
+            @extend .icons-chevron;
+            display: inline-block;
+            float: right;
+            position: relative;
+            top: 2px;
+            content: '';
+          }
+        }
+      }
+    }
+  }
+}

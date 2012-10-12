@@ -1,0 +1,57 @@
+.mw-store_locator {
+  // Google maps canvas
+  #DOMWindow {
+    width: 90% !important;
+  }
+    
+  select {
+    height: 24px; 
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    // TODO: Add to lib
+    background-image: linear-gradient(top, #fff 0%, #ededed 100%);
+    color: $green;
+  }
+
+  table.stores {
+    width: 100%;
+
+    thead {
+      @extend .mw_box1_head;
+      @include adjust-font-size-to($h3_size);
+      th {
+        padding: 5px;
+      }
+    }
+
+    tbody {
+      @extend .mw_box1;
+      tr:nth-of-type(odd) {
+        background: #EEE; 
+        border-bottom: 1px solid $green;
+      }
+      tr:nth-of-type(even) {
+        background: #fff; 
+        border-bottom: 1px solid $green;
+      }
+      td {
+        padding: 5px;
+      }
+    }
+
+
+    td, th {
+      &:nth-of-type(4) {
+        display: none;
+      }
+    }
+
+    br {
+      display: block;
+    }
+  
+  }
+}   
+
+

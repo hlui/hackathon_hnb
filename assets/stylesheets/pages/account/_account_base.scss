@@ -1,0 +1,171 @@
+.mw-account_base {
+  h1{
+    @include adjust-font-size-to($h1_size);
+    @extend .mw_h1;
+  }
+
+  h2{
+    @include adjust-font-size-to($h2_size);
+    @extend .mw_h2;
+    padding: 0;
+  }
+
+  h3 {
+    @include adjust-font-size-to($h3_size);
+  }
+ 
+  strong {
+    font-weight: bold;
+  }
+
+  #PageContent_3 {
+    >p {
+      @include leader(1);
+    }
+  }
+  
+  .mw-breadcrumb {
+    *:not(.mw-account_btn){
+      display: inline-block;
+      padding-left: 5px; 
+      color: $gray1;
+    }
+
+    div.breadcrumb {
+      font-weight: bold;
+    }
+    .mw-account_btn {
+      float:right;
+      margin-right: 10px;
+      padding: 0;
+      span {
+        color: white;
+        padding: 0 5px;
+      }
+    }
+    @include adjust-font-size-to(12px);
+    @include padding-leader(.25);
+    @include padding-trailer(.25);
+
+    border-bottom: 1px solid $gray1;
+  }
+
+  // Update Button spacing /account/personaldetails
+  .login-half-panel:not(.login-panel) {
+    .loginButtonContainer.mw-trailer{
+      @include padding-trailer(1);
+    }
+  }
+
+  .mw-cust_serve {
+    .header {
+      text-align: center;
+      margin: 10px;
+      margin-bottom: 0px;
+      > h2 {
+        @include bar_browsearrows_dark;
+
+        > div.mw-arrow {
+          top: -22px !important;
+          right: 10px !important;
+        }
+      } 
+    }
+
+    .navLinks {
+      > li > a {
+        margin: 0 10px;
+        @extend .mw_bar1;
+        @include bar_chevron;
+      }
+    }
+  }
+    
+  input[type='text'], input[type='password'], input[role='textbox'], textarea {
+    @include singlecolumn_input;
+    @include trailer(.5);
+  }
+
+  select {
+    height: 24px; 
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    background-image: linear-gradient(top, #fff 0%, #ededed 100%);
+    color: $green;
+    @include trailer(.5);
+  }
+  .accountMain {
+    margin: 0 10px;
+    
+    .mw-heading {
+      @include adjust-font-size-to($h1_size);
+      color: green;
+    }
+
+    .blurb {
+      p:first-of-type {
+        @include trailer(1); 
+      } 
+    }
+
+    label {
+      @include label;
+
+      &.note.editItem{
+        display: block;
+        input {
+          margin-right: 10px;
+        }
+      }
+
+      em {
+        color: $red1;
+      }
+    }
+
+    .viewItem {
+      display: none;
+    }
+  }
+
+  .mw_btn3, .mw_btn4 {
+    padding: 10px;
+  }
+
+  // All stores list
+  ul.allstores {
+    a {
+      @extend .mw_bar1;
+      &:after {
+        @extend .icons-chevron;
+        display: inline-block;
+        float: right;
+        position: relative;
+        top: 4px;
+        content: '';
+      }
+    }
+  }
+
+
+  .mw-trailer {
+    @include leader(1);
+    @include trailer(1);
+  }
+
+  #newsletter > h2 {
+    line-height: 1.5em;
+    @include trailer(.5);
+  }
+  
+  // Jira#10
+  .whybother {
+    list-style-type: disc; 
+    list-style-position: inside;
+    @include trailer(1);
+    li {
+      padding-left: 10px;
+    }
+  }
+}
