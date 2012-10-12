@@ -78,8 +78,8 @@ makes it feel more like a native app.
 while en route back to the home page
 
 -To experience the flow using different transitions go to: 
-http://blitz.hollandandbarrett.com.moovapp.com?mw_transition=```html<transitionID>```
-  where ```html<transitionID>``` ranges from 1-9 (inclusive), and will use this 1 transition throughout the browse flow, i.e. http://blitz.hollandandbarrett.com.moovapp.com?mw_transition=9
+http://blitz.hollandandbarrett.com.moovapp.com?mw_transition=[transitionID]
+  where [transitionID] ranges from 1-9 (inclusive), and will use this 1 transition throughout the browse flow, i.e. http://blitz.hollandandbarrett.com.moovapp.com?mw_transition=9
   will do the "slidedown" transition
 
 Macy's (iPad proof of concept) - home page will redirect you to the category demo page
