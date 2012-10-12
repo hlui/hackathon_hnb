@@ -26,7 +26,8 @@ The main things focused on during this project for jQuery Mobile were:
 2) Setting up the HTML structure according to jQuery Mobile's standards
 3) Transitions while loading ajax content
 4) Loading Icon while loading ajax content
-5) hjax?
+5) Manually ajaxing the next page into a container on the current page 
+while showing the current page AND the new page (hjax)
 
 ## Documentation
 
@@ -41,10 +42,10 @@ The main things focused on during this project for jQuery Mobile were:
 -Path to js file inside /assets/javascript folder
 -Used to override the global defaults set up for jQuery Mobile (i.e. changing the loading icon/text)
 
-`jqm_insert(Text %tag_name, Text %role)`
-`jqm_insert_footer(Text %tag_name, Text %role)`
-`jqm_insert_content(Text %tag_name, Text %role)`
-`jqm_insert_header(Text %tag_name, Text %role)`
+`jqm_insert(Text %tag_name, Text %role)
+jqm_insert_footer(Text %tag_name, Text %role)
+jqm_insert_content(Text %tag_name, Text %role)
+jqm_insert_header(Text %tag_name, Text %role)`
 -These insert functions help set up the HTML structure according to jQuery Mobile's standards. All of these also have the variants of insert that already exist for Tritium's insert, i.e. you can call jqm_insert_at("top", "div", "My Content", "roleValue", class: "mw_rocks")
 
 `jqm_wrap(Text %tag_name, Text %role)`
@@ -65,21 +66,28 @@ The main things focused on during this project for jQuery Mobile were:
 Holland & Barrett-
 
 Home Page: http://blitz.hollandandbarrett.com.moovapp.com/
+
 -The whole browse flow has been ajax-ified, with transitions and loading icon
+
 -Use the "Browse the store" accordion menu to start the browse flow
+
 -For transitions, note the slides, flips, and turns! It's cool seeing these on a mobile site,
 makes it feel more like a native app.
+
 -Also, hit the Back button after getting to the PDP page to experience the transitions in reverse
 while en route back to the home page
+
 -To experience the flow using different transitions go to: 
-http://blitz.hollandandbarrett.com.moovapp.com?mw_transition=<transitionID>
-  where <transitionID> ranges from 1-9 (inclusive), and will use this 1 transition throughout
+http://blitz.hollandandbarrett.com.moovapp.com?mw_transition=`<transitionID>`
+  where `<transitionID>` ranges from 1-9 (inclusive), and will use this 1 transition throughout
   the browse flow, i.e. http://blitz.hollandandbarrett.com.moovapp.com?mw_transition=9
   will do the "slidedown" transition
 
 Macy's (iPad proof of concept) - home page will redirect you to the category demo page
+
 -Category page of women's shirts, product carousel at top, PDP page brought in via ajax
--and inserted below the carousel
+and inserted below the carousel
+
 -Uses hjax since the PDP is requested using AJAX and then the full HTML document is
 converted to an HTML fragment at the proxy before the content is inserted into the DOM
 http://blitz.macys.com.moovapp.com/
