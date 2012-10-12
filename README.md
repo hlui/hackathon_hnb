@@ -145,7 +145,7 @@ while showing the current page AND the new page (hjax)
 
 Holland & Barrett-
 
-Home Page: http://blitz.hollandandbarrett.com.moovapp.com/
+1 Home Page: http://blitz.hollandandbarrett.com.moovapp.com/
 
 -The whole browse flow has been ajax-ified, with transitions and loading icon
 
@@ -162,13 +162,16 @@ http://blitz.hollandandbarrett.com.moovapp.com?mw_transition=[transitionID]
   where [transitionID] ranges from 1-9 (inclusive), and will use this 1 transition throughout the browse flow, i.e. http://blitz.hollandandbarrett.com.moovapp.com?mw_transition=9
   will do the "slidedown" transition
 
-Macy's (iPad proof of concept) - home page will redirect you to the category demo page
+  ----------------------------------------------------
+
+2 Macy's (iPad proof of concept) - home page will redirect you to the category demo page
 
 -Category page of women's shirts, product carousel at top, PDP page brought in via ajax
 and inserted below the carousel
 
 -Uses hjax since the PDP is requested using AJAX and then the full HTML document is
 converted to an HTML fragment at the proxy before the content is inserted into the DOM
+
 http://blitz.macys.com.moovapp.com/
 
 
